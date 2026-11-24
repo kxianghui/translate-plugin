@@ -101,3 +101,8 @@ scripts/mock-llm.js    # 本地 mock 服务（开发用）
 
 - 仅处理扩展注入时刻已存在的静态 DOM；页面后续动态新增的内容、或写在元素属性（如 `placeholder`/`title`/`alt`）里的文本不在翻译范围内。
 - 为保证稳定性，请求采用串行方式（同一时刻一个请求）。
+
+## License
+
+[MIT](LICENSE) © 2026 kxianghui
+
