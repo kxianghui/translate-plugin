@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>大模型网页翻译 — 设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>大模型网页翻译</h1>
+    <p class="hint">支持两种协议：OpenAI 兼容接口（<code>/chat/completions</code>，兼容 OpenAI、DeepSeek 及各类中转站）与 Anthropic Messages 接口（<code>/v1/messages</code>）。<br>Anthropic 的 Base URL 填 <code>https://api.anthropic.com</code>（或带 <code>/v1</code> 均可）。</p>
+
+    <form id="form">
+      <label class="field">
+        <span>接口协议</span>
+        <select id="protocol">
+          <option value="openai">OpenAI 兼容（/chat/completions）</option>
+          <option value="anthropic">Anthropic Messages（/v1/messages）</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Base URL</span>
+        <input id="baseURL" type="text" autocomplete="off" spellcheck="false" placeholder="https://api.openai.com/v1">
+      </label>
+
+      <label class="field">
+        <span>API Key</span>
+        <input id="apiKey" type="password" autocomplete="off" spellcheck="false" placeholder="sk-...">
+      </label>
+
+      <label class="field">
+        <span>模型</span>
+        <input id="model" type="text" autocomplete="off" spellcheck="false" placeholder="gpt-4o-mini">
+      </label>
+
+      <label class="field">
+        <span>目标语言</span>
+        <input id="targetLang" type="text" autocomplete="off" spellcheck="false" placeholder="简体中文">
+      </label>
+
+      <div class="actions">
+        <button id="save" type="submit" class="btn primary">保存</button>
+        <button id="test" type="button" class="btn">测试连接</button>
+      </div>
+    </form>
+
+    <div id="status" class="status" hidden></div>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>

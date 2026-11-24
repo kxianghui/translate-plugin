@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "大模型网页翻译",
+  "version": "1.0.0",
+  "description": "调用大模型 API 翻译网页内容：整页翻译、划词翻译、悬浮输入框翻译。",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/ui.js", "content/content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "大模型网页翻译"
+  },
+  "options_page": "options/options.html",
+  "commands": {
+    "toggle-page": {
+      "suggested_key": {
+        "default": "Alt+Shift+T"
+      },
+      "description": "整页翻译 / 还原原文"
+    }
+  }
+}
