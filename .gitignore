@@ -1,2 +1,3 @@
-# 项目内的 Markdown 文档不纳入版本管理
+# 项目内的 Markdown 文档默认不纳入版本管理（README 除外）
 *.md
+!README.md
